@@ -30,13 +30,14 @@ module.exports = async function reviews(req, res) {
   const reviews = await fetchApi(reviewsApiUrl).then((res) => res.json())
 
   const hasEnoughApprovals = reviews.filter(isApproved).length > 1
+  const statusState = hasEnoughApprovals ? 'success' : 'error'
   const statusBody = {
-    state: hasEnoughApprovals ? 'success' : 'error',
+    state: statusState,
     description: hasEnoughApprovals ? 'LGTM' : 'Not enough approvals',
     context: 'code-review/approvals'
   }
 
-  await fetchApi(statusApiUrl, JSON.stringify(statusBody))
+  const response = await fetchApi(statusApiUrl, JSON.stringify(statusBody)).then((res) => res.json())
 
-  res.end()
+  res.end(JSON.stringify(response))
 }
