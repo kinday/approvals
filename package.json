@@ -5,6 +5,7 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint .",
     "start": "micro",
     "test": "jest"
   },
@@ -12,6 +13,11 @@
     "micro": "^7.3.3"
   },
   "devDependencies": {
+    "@rushplay/eslint-config-rushplay": "^2.0.0",
+    "eslint": "^3.19.0",
+    "eslint-plugin-dependencies": "^2.3.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jest": "^20.0.1",
     "jest": "^20.0.1"
   }
 }

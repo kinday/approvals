@@ -1,0 +1,9 @@
+{
+  "extends": "@rushplay/rushplay",
+  "parserOptions": {
+    "ecmaVersion": 8
+  },
+  "env": {
+    "node": true
+  }
+}
