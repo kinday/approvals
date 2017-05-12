@@ -2,6 +2,8 @@ if (typeof process.env.GH_TOKEN !== 'string') {
   throw new Error('GH_TOKEN is required')
 }
 
+const {json} = require('micro')
+
 const headers = {
   'Accept': 'application/vnd.github.v3+json',
   'Authorization': `token ${process.env.GH_TOKEN}`,
