@@ -15,7 +15,7 @@ function isApproved(review) {
 }
 
 function fetchApi(url, body) {
-  return fetch(url, {body, headers})
+  return fetch(url, {body, headers, method: body ? 'POST' : 'GET'})
 }
 
 module.exports = async function reviews(req, res) {
@@ -36,7 +36,7 @@ module.exports = async function reviews(req, res) {
     context: 'code-review/approvals'
   }
 
-  await fetchApi(statusApiUrl, statusBody)
+  await fetchApi(statusApiUrl, JSON.stringify(statusBody))
 
   res.end()
 }
