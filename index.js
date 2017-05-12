@@ -15,7 +15,7 @@ function fetchApi(url, body) {
   return fetch(url, {body, headers})
 }
 
-module.exports = async function reviews(req, res) => {
+module.exports = async function reviews(req, res) {
   const body = await json(req)
 
   const repoUrl = body.repository.url
