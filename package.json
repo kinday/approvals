@@ -10,7 +10,8 @@
     "test": "jest"
   },
   "dependencies": {
-    "micro": "^7.3.3"
+    "micro": "^7.3.3",
+    "node-fetch": "^1.6.3"
   },
   "devDependencies": {
     "@rushplay/eslint-config-rushplay": "^2.0.0",

@@ -2,6 +2,7 @@ if (typeof process.env.GH_TOKEN !== 'string') {
   throw new Error('GH_TOKEN is required')
 }
 
+const fetch = require('node-fetch')
 const {json} = require('micro')
 
 const headers = {
