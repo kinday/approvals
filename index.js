@@ -41,7 +41,7 @@ module.exports = async function reviews(req, res) {
 
   const reviews = await fetchApi(reviewsApiUrl)
 
-  const hasEnoughApprovals = reviews.filter(isApproved).length > 1
+  const hasEnoughApprovals = reviews && reviews.filter(isApproved).length > 1
   const statusBody = {
     state: hasEnoughApprovals ? 'success' : 'error',
     description: hasEnoughApprovals ? 'LGTM' : 'Not enough approvals',
